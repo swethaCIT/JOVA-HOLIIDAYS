@@ -1,7 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Hero.css";
 
+// Import images in order
+import kolsai from "../../assets/images/Kolsai.png";
+import glencoe from "../../assets/images/Glencoe.jpg";
+import mountTitlis from "../../assets/images/Mounttitlis.png";
+import cherryBlossoms from "../../assets/images/cherry-blossoms-chidorigafuchi-park-tokyo-japan.jpg";
+import tharDesert from "../../assets/images/Thardesert.png";
+
 export default function Hero() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // Array of images in your specified order
+  const images = [kolsai, glencoe, mountTitlis, cherryBlossoms, tharDesert];
+
   useEffect(() => {
     const setVh = () => {
       document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
@@ -12,8 +24,22 @@ export default function Hero() {
     return () => window.removeEventListener("resize", setVh);
   }, []);
 
+  // Image carousel - change every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
-    <section className="hero">
+    <section
+      className="hero"
+      style={{
+        backgroundImage: `url(${images[currentImage]})`,
+      }}
+    >
       {/* Overlay */}
       <div className="hero-overlay"></div>
 
