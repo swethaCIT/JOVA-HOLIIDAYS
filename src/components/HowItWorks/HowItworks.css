@@ -1,0 +1,92 @@
+/* SECTION */
+.how {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #f7f9fc, #ffffff);
+  text-align: center;
+}
+
+/* HEADER */
+.how-header h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #0d3b66;
+  margin-bottom: 10px;
+}
+
+.how-header p {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* GRID */
+.how-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.how-card {
+  position: relative;
+  padding: 30px 20px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+/* HOVER (subtle premium) */
+.how-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+/* STEP NUMBER (minimal style) */
+.step {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
+/* ICON */
+.icon {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+/* TEXT */
+.how-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.how-card p {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .how-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+  }
+
+  .how-card {
+    min-width: 260px;
+    flex: 0 0 auto;
+    text-align: left;
+  }
+
+  .how-header h2 {
+    font-size: 26px;
+  }
+}
