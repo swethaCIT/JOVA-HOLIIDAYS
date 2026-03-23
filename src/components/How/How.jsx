@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import "./Howitworks.css";
+import "./How.css";
 
-export default function HowItWorks() {
+export default function How() {
 
   useEffect(() => {
     const cards = document.querySelectorAll(".how-card");
