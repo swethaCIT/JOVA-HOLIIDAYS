@@ -90,7 +90,7 @@ Message: ${form.message}`;
               <input
                 type="text"
                 name="name"
-                placeholder="John Trangely"
+                placeholder="Enter your name"
                 value={form.name}
                 onChange={handleChange}
                 required
@@ -102,7 +102,7 @@ Message: ${form.message}`;
               <input
                 type="email"
                 name="email"
-                placeholder="hello@nurency.com"
+                placeholder="abc@gmail.com"
                 value={form.email}
                 onChange={handleChange}
                 required
@@ -115,7 +115,7 @@ Message: ${form.message}`;
             <input
               type="tel"
               name="phone"
-              placeholder="+91 9876543210"
+              placeholder="+91 1234567890"
               value={form.phone}
               onChange={handleChange}
               required
@@ -126,7 +126,7 @@ Message: ${form.message}`;
             <label>Message</label>
             <textarea
               name="message"
-              placeholder="Write here your message"
+              placeholder="Make your memories with us"
               value={form.message}
               onChange={handleChange}
               required
