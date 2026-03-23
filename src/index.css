@@ -1,36 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
 
-/* 🔥 FORCE LIGHT MODE */
 :root {
-  color-scheme: light only;
+  color-scheme: light;
 
-  /* Theme Colors */
+  /* Define your colors */
   --accent: #ff6600;
   --accent-bg: #fff5eb;
   --accent-border: #ff6600;
   --border: #e5e7eb;
   --text-h: #111827;
   --social-bg: #f3f4f6;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  /* Prevent Chrome dark override */
-  background-color: inherit;
 }
 
-/* GLOBAL LINKS */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* GLOBAL TEXT */
 body,
 p,
 span,
@@ -44,7 +37,6 @@ textarea {
   line-height: 1.6;
 }
 
-/* HEADINGS */
 h1,
 h2,
 h3,
@@ -63,7 +55,7 @@ h2 {
   line-height: 1.2;
 }
 
-/* NAV + BUTTON TEXT */
+/* Visual hierarchy: buttons + nav text use heavier Inter */
 button,
 nav,
 .nav,
@@ -73,43 +65,17 @@ nav,
   font-weight: 500;
 }
 
-/* 🔥 FORCE LIGHT BACKGROUND */
+body {
+  overflow-x: hidden;
+}
 html, body {
   background-color: #ffffff !important;
   color: #000000 !important;
-  overflow-x: hidden;
 }
 
-/* 🔥 OVERRIDE DARK MODE COMPLETELY */
 @media (prefers-color-scheme: dark) {
   html, body {
     background-color: #ffffff !important;
     color: #000000 !important;
   }
-}
-
-/* 🔥 FIX FORM ELEMENTS (IMPORTANT) */
-input,
-textarea,
-select {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-  border: 1px solid var(--border);
-}
-
-/* 🔥 OPTIONAL: Smooth UI */
-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
-
-/* 🔥 SCROLLBAR (optional clean look) */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 10px;
 }
