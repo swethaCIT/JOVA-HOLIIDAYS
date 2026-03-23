@@ -5,7 +5,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("Home");
 
-  const navItems = ["Home", "Packages", "About", "Contact"];
+  const navItems = ["Home", "Packages", "About","Services", "Contact"];
 
   // ✅ CORRECT FUNCTION
   const handleNavClick = (item) => {
