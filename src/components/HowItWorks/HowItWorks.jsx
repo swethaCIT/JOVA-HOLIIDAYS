@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./HowItWorks.css";
+import "./Howitworks.css";
 
 export default function HowItWorks() {
 
