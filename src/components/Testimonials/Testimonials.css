@@ -16,7 +16,6 @@
   padding: 40px;
   border-radius: 25px;
 
-  /* 🔥 BIG GLASS CONTAINER */
   background: rgba(255,255,255,0.6);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(0,0,0,0.05);
@@ -32,7 +31,23 @@
 
 .testimonial-left p {
   color: #555;
-  margin-top: 10px;
+}
+
+/* ================= NAV BUTTONS ================= */
+.nav-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.nav-buttons button {
+  border: none;
+  background: #ff7a18;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 /* ================= CARDS ================= */
@@ -42,18 +57,24 @@
   gap: 15px;
 }
 
+/* 🔥 LIGHT GRADIENT CARD */
 .card {
-  background: rgba(255,255,255,0.9);
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 18px;
 
-  border: 1px solid #eee;
+  background: linear-gradient(
+    135deg,
+    rgba(58,134,255,0.08),
+    rgba(255,122,24,0.08)
+  );
+
+  border: 1px solid rgba(0,0,0,0.05);
 
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
@@ -63,38 +84,31 @@
   line-height: 1.6;
 }
 
+/* ================= BOTTOM ================= */
 .bottom {
   margin-top: 15px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .bottom h4 {
   color: #0d3b66;
 }
 
-.bottom span {
+/* ================= STARS ================= */
+.star {
+  color: #ddd;
+}
+
+.star.filled {
   color: #ff7a18;
-  font-weight: 600;
 }
 
-/* ================= CONTROLS ================= */
-.controls {
-  margin-top: 15px;
-  text-align: center;
-}
-
-.controls button {
-  border: none;
-  background: none;
-  font-size: 20px;
-  margin: 0 5px;
-  cursor: pointer;
-  color: #999;
-}
-
-.controls button:hover {
-  color: #ff7a18;
+.star.half {
+  background: linear-gradient(90deg, #ff7a18 50%, #ddd 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ================= MOBILE ================= */
@@ -102,30 +116,42 @@
 
   .testimonial-wrapper {
     grid-template-columns: 1fr;
-    padding: 25px;
+    padding: 20px;
   }
 
+  /* 🔥 VERTICAL CAROUSEL */
   .cards {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+
+    height: 260px; /* ✅ reduced */
+    overflow-y: auto;
+
+    scroll-snap-type: y mandatory;
   }
 
   .card {
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeUp 0.6s ease forwards;
+    min-height: 180px;   /* ✅ reduced */
+    padding: 16px;       /* tighter */
+
+    flex: 0 0 auto;
+    scroll-snap-align: center;
   }
 
-  .card:nth-child(1) { animation-delay: 0.1s; }
-  .card:nth-child(2) { animation-delay: 0.2s; }
-  .card:nth-child(3) { animation-delay: 0.3s; }
-}
+  .card p {
+    font-size: 13px;     /* slightly smaller */
+    line-height: 1.5;
+  }
 
-/* ================= ANIMATION ================= */
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  /* hide scrollbar */
+  .cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* remove buttons */
+  .nav-buttons,
+  .controls {
+    display: none;
   }
 }

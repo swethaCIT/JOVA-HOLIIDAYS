@@ -20,7 +20,7 @@ export default function HowItWorks() {
 
         <div className="how-header">
           <h2>How It Works</h2>
-          <p>Planning your perfect trip is as easy as 1-2-3-4! Follow these simple steps</p>
+          <p>Planning your perfect trip is as easy as 1-2-3-4-5! Follow these simple steps</p>
         </div>
 
         <div className="how-grid">

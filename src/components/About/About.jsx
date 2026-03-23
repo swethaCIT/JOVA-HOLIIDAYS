@@ -7,35 +7,35 @@ export default function About() {
 
   const slides = [
     {
-      introTitle: "Where Travel Feels Effortless",
+      introTitle: "Where Comforts Meets Stress-Free Travel",
       introText: `At Jova Holidays, we don’t just plan trips — we take complete responsibility for your journey. 
       From the moment you start exploring your options to the time you return home, everything is handled 
       with care, clarity, and attention to detail. Our focus is simple: make travel easy, budget-friendly, 
       and completely stress-free.`,
 
-      cardTitle: "Travel Without Stress",
+      cardTitle: "Travel Without Hassle",
       cardText: "At Jova Holidays, we believe travel should feel simple and enjoyable — not confusing or overwhelming. From planning to return, every detail is handled with care.",
       features: ["Comfort", "Safety"],
     },
     {
       introTitle: "Designed Around Your Budget",
       introText: `Every journey we create is designed around your needs and your budget. From complete tour 
-      planning and ticket bookings to stays, pickup, and real-time support, we handle everything end-to-end. 
+      planning and ticket bookings to stays, pickup, and real-time on tour support, we handle everything end-to-end. 
       Whether it’s an affordable trip or a premium experience, we ensure you get the best value without 
       compromising on comfort.`,
 
-      cardTitle: "Budget Comes First",
+      cardTitle: "Plan Around Your Budget",
       cardText: "Your budget is our starting point. We design trips that give you the best value without compromising on comfort or experience.",
       features: ["Savings", "Best Value"],
     },
     {
-      introTitle: "Support You Can Trust",
+      introTitle: "Reliable Support In Every Step",
       introText: `What truly sets us apart is the way we stay connected throughout your journey. With instant 
       support, Tamil-speaking assistance even on international trips, and special care for families, elderly 
       travelers, and those with specific needs, we make every trip smooth and worry-free.`,
 
-      cardTitle: "We’re With You Always",
-      cardText: "From end-to-end planning to real-time support, we stay connected throughout your journey. Trusted by 200+ happy travelers.",
+      cardTitle: "Connected With Care Always",
+      cardText: "From end-to-end planning to real-time support, we stay connected throughout your journey. Trusted by thousands of happy travelers.",
       features: ["24/7 Support", "Tamil Help"],
     },
   ];

@@ -37,7 +37,14 @@ const reviews = [
 export default function Testimonials() {
   const [slide, setSlide] = useState(0);
 
-  const visible = reviews.slice(slide * 3, slide * 3 + 3);
+  const isMobile = window.innerWidth <= 768;
+
+  const visible = isMobile
+    ? reviews   // 🔥 show all 6 cards in mobile
+    : reviews.slice(slide * 3, slide * 3 + 3);
+
+  const next = () => setSlide((prev) => (prev + 1) % 2);
+  const prev = () => setSlide((prev) => (prev - 1 + 2) % 2);
 
   return (
     <section className="testimonials">
@@ -56,6 +63,12 @@ export default function Testimonials() {
         {/* RIGHT */}
         <div className="testimonial-right">
 
+          {/* DESKTOP NAV */}
+          <div className="nav-buttons">
+            <button onClick={prev}>‹</button>
+            <button onClick={next}>›</button>
+          </div>
+
           <div className="cards">
             {visible.map((item, i) => (
               <div key={i} className="card">
@@ -65,7 +78,6 @@ export default function Testimonials() {
                 <div className="bottom">
                   <h4>{item.name}</h4>
 
-                  {/* ⭐ STARS */}
                   <div className="stars">
                     {[1,2,3,4,5].map((star, index) => (
                       <span
@@ -87,12 +99,6 @@ export default function Testimonials() {
 
               </div>
             ))}
-          </div>
-
-          {/* DOT CONTROLS */}
-          <div className="controls">
-            <button onClick={() => setSlide(0)} className={slide === 0 ? "active" : ""}></button>
-            <button onClick={() => setSlide(1)} className={slide === 1 ? "active" : ""}></button>
           </div>
 
         </div>
