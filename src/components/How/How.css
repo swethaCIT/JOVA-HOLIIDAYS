@@ -8,13 +8,12 @@
 }
 
 /* ========================= */
-/* SECTION (DESKTOP) */
+/* SECTION */
 /* ========================= */
 .how {
   padding: 60px 20px 100px;
   text-align: center;
 
-  /* 🔥 SAME GRADIENT AS DESKTOP */
   background: linear-gradient(
     180deg,
     #ffffff 0%,
@@ -24,17 +23,13 @@
   ) !important;
 }
 
-/* ========================= */
 /* CONTENT */
-/* ========================= */
 .how-content {
   max-width: 1300px;
   margin: auto;
 }
 
-/* ========================= */
 /* HEADER */
-/* ========================= */
 .how-header h2 {
   font-size: 40px;
   color: var(--blue);
@@ -46,26 +41,20 @@
   font-size: 16px;
 }
 
-/* ========================= */
 /* GRID */
-/* ========================= */
 .how-grid {
   margin-top: 60px;
-
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 }
 
-/* ========================= */
-/* CARD (DESKTOP GLASS) */
-/* ========================= */
+/* CARD */
 .how-card {
   position: relative;
   padding: 50px 20px 30px;
   border-radius: 20px;
 
-  /* 🔥 GLASS */
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -74,7 +63,6 @@
 
   transition: all 0.4s ease;
 
-  /* 🔥 CSS ANIMATION */
   animation: fadeUp 0.8s ease forwards;
   opacity: 0;
 }
@@ -86,17 +74,13 @@
 .how-card:nth-child(4) { animation-delay: 0.4s; }
 .how-card:nth-child(5) { animation-delay: 0.5s; }
 
-/* ========================= */
 /* HOVER */
-/* ========================= */
 .how-card:hover {
   transform: translateY(-10px) scale(1.04);
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* ========================= */
 /* STEP */
-/* ========================= */
 .step {
   position: absolute;
   top: -14px;
@@ -111,22 +95,21 @@
   font-size: 12px;
 }
 
-/* ========================= */
 /* ICON */
-/* ========================= */
 .icon {
   font-size: 28px;
   margin: 20px 0;
-  transition: 0.3s;
+  display: inline-block;
+
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 .how-card:hover .icon {
-  transform: scale(1.3) rotate(8deg);
+  transform: scale(1.15) rotate(5deg);
 }
 
-/* ========================= */
 /* TEXT */
-/* ========================= */
 .how-card h3 {
   color: var(--blue);
 }
@@ -136,27 +119,17 @@
   font-size: 14px;
 }
 
-/* ========================= */
-/* FOOTER CAPTION */
-/* ========================= */
+/* FOOTER */
 .how-footer {
   margin-top: 60px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
 }
 
 .how-footer p {
   font-size: 16px;
   color: #01142e;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  margin: 0;
 }
 
-/* ========================= */
 /* ANIMATION */
-/* ========================= */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -168,9 +141,7 @@
   }
 }
 
-/* ========================= */
 /* TABLET */
-/* ========================= */
 @media (max-width: 1100px) {
   .how-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -178,42 +149,62 @@
 }
 
 /* ===================================================== */
-/* ================= MOBILE (YOUR DESIGN) =============== */
+/* ================= MOBILE (GLASS CAROUSEL 🔥) ========= */
 /* ===================================================== */
 @media (max-width: 768px) {
 
-  /* SECTION */
   .how {
     padding: 80px 20px;
-    background: linear-gradient(to bottom, #f7f9fc, #ffffff);
   }
 
-  /* HEADER */
   .how-header h2 {
     font-size: 26px;
   }
 
-  /* GRID → CAROUSEL */
+  /* CAROUSEL */
   .how-grid {
     display: flex;
     overflow-x: auto;
-    gap: 15px;
-    padding-bottom: 10px;
+    gap: 16px;
+    padding: 10px 5px 20px;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
   }
 
-  /* CARD → REMOVE GLASS */
+  .how-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .how-grid {
+    scrollbar-width: none;
+  }
+
+  /* 🔥 GLASS CARD IN MOBILE */
   .how-card {
-    min-width: 260px;
+    min-width: 82%;
     flex: 0 0 auto;
-    text-align: left;
 
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    backdrop-filter: none;
+    scroll-snap-align: center;
 
-    animation: none;
-    opacity: 1;
-    transform: none;
+    /* KEEP GLASS */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    /* smooth animation */
+    transform: scale(0.96);
+    opacity: 0.85;
+
+    transition: all 0.35s ease;
+  }
+
+  .how-card:hover {
+    transform: scale(0.98);
   }
 
   /* STEP */
@@ -222,26 +213,51 @@
     right: 20px;
     left: auto;
     transform: none;
-    color: #9ca3af;
-    background: none;
   }
 
   /* TEXT */
   .how-card h3 {
-    color: #111827;
+    color: var(--blue);
   }
 
   .how-card p {
-    color: #6b7280;
+    color: #1f2937;
   }
 
-  /* FOOTER */
   .how-footer {
     margin-top: 40px;
   }
 
   .how-footer p {
     font-size: 14px;
-    color:#01142e;
+  }
+
+  /* DOTS */
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    width: 18px;
+    border-radius: 10px;
+    background: var(--orange);
+  }
+}
+
+/* hide dots in desktop */
+@media (min-width: 769px) {
+  .dots {
+    display: none;
   }
 }
