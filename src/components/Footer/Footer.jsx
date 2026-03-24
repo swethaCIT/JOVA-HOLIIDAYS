@@ -11,7 +11,7 @@ export default function Footer() {
           <h2 className="logo">✈ Jova Holidays</h2>
 
           <p>
-            Discover India like never before. From serene beaches to majestic
+            Discover the world like never before. From serene beaches to majestic
             mountains, we craft unforgettable journeys tailored just for you.
           </p>
 
@@ -53,17 +53,12 @@ export default function Footer() {
           <h3>Contact Info</h3>
 
           <p>
-            📍 95, Velayudham St, Ramapuram,<br/>
-            Alandur, Chennai - 600016
+            📍 95, Velayudham Street, Ramapuram, Alandur,<br/>
+             Chennai - 600016
           </p>
 
           <p>📞 +91 93633 11085</p>
           <p>📧 travel@jovaholidays.com</p>
-
-          <p className="timing">
-            Mon - Sat: 10 AM - 7 PM <br/>
-            Sunday: Closed
-          </p>
         </div>
 
       </div>
@@ -71,7 +66,7 @@ export default function Footer() {
       {/* BOTTOM */}
       <div className="footer-bottom">
         <p>
-          © 2026 Jova Holidays. Crafted with ❤️ for unforgettable journeys.
+          © 2026 Jova Holidays. <br /> Crafted with ❤️ for unforgettable journeys.
         </p>
 
         <div className="footer-links">
