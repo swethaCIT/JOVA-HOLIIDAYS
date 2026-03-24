@@ -78,8 +78,8 @@ Message: ${form.message}`;
         <div className="card">
           <div className="icon orange">📍</div>
           <h4>Visit Us</h4>
-          <p>India</p>
-          <span>Available Worldwide</span>
+          <p>Chennai, India</p>
+          <span>Serving Travelers Worldwide</span>
         </div>
 
       </div>
