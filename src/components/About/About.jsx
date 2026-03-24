@@ -62,7 +62,7 @@ export default function About() {
 
           <div className="stats-card glass-card">
             <div>
-              <h3>200+</h3>
+              <h3>2000+</h3>
               <p>Customers</p>
             </div>
             <div>

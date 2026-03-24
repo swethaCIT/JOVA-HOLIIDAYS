@@ -48,14 +48,40 @@ Message: ${form.message}`;
 
   return (
     <section className="contact">
-      
+
       {/* HEADER */}
       <div className="contact-header">
         <h2>Get In Touch</h2>
         <p>
-          We’ll create high-quality linkable content and build at least 40
-          high-authority links to each asset.
+          Have questions? We'd love to hear from you. Send us a message and we'll
+          respond as soon as possible.
         </p>
+      </div>
+
+      {/* CONTACT CARDS */}
+      <div className="contact-cards">
+
+        <div className="card">
+          <div className="icon green">📞</div>
+          <h4>Call Us</h4>
+          <p>+91 9363311085</p>
+          <span>Mon - Sun : 9 AM - 9 PM</span>
+        </div>
+
+        <div className="card">
+          <div className="icon blue">✉️</div>
+          <h4>Email Us</h4>
+          <p>travel@jovaholidays.com</p>
+          <span>We reply within an hour</span>
+        </div>
+
+        <div className="card">
+          <div className="icon orange">📍</div>
+          <h4>Visit Us</h4>
+          <p>India</p>
+          <span>Available Worldwide</span>
+        </div>
+
       </div>
 
       {/* SUCCESS MESSAGE */}
@@ -65,53 +91,26 @@ Message: ${form.message}`;
         </div>
       )}
 
-      {/* MAIN CARD */}
-      <div className="contact-container">
-
-        {/* LEFT PANEL */}
-        <div className="contact-info">
-          <h3>Contact Information</h3>
-          <p>
-            We’ll help you plan your perfect travel experience.
-          </p>
-
-          <div className="info-item">📞 +91 81483 29325</div>
-          <div className="info-item">📞 +91 81483 29325</div>
-          <div className="info-item">✉️ support@jovaholidays.com</div>
-          <div className="info-item">📍 India</div>
-        </div>
-
-        {/* FORM */}
+      {/* FORM CARD */}
+      <div className="form-wrapper">
         <form className="contact-form" onSubmit={handleSubmit}>
 
-          <div className="row">
-            <div className="input-group">
-              <label>Your Name</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                value={form.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
+          <h3>Send Us a Message</h3>
 
-            <div className="input-group">
-              <label>Your Email</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="abc@gmail.com"
-                value={form.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
+          <div className="input-group">
+            <label>Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              value={form.name}
+              onChange={handleChange}
+              required
+            />
           </div>
 
           <div className="input-group">
-            <label>Your Phone</label>
+            <label>Phone Number</label>
             <input
               type="tel"
               name="phone"
@@ -123,19 +122,32 @@ Message: ${form.message}`;
           </div>
 
           <div className="input-group">
-            <label>Message</label>
+            <label>Email Address</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Your Message</label>
             <textarea
               name="message"
-              placeholder="Make your memories with us"
+              placeholder="Which destination are you planning to visit? Any specific requirements? Let us know!"
               value={form.message}
               onChange={handleChange}
               required
             />
           </div>
 
-          <button type="submit">Send Message</button>
+          <button type="submit">✈ Send Message</button>
         </form>
       </div>
+
     </section>
   );
 }
