@@ -114,7 +114,7 @@ Message: ${form.message}`;
             <input
               type="tel"
               name="phone"
-              placeholder="+91 1234567890"
+              placeholder="Include country code (e.g., +91)"
               value={form.phone}
               onChange={handleChange}
               required
@@ -126,7 +126,7 @@ Message: ${form.message}`;
             <input
               type="email"
               name="email"
-              placeholder="your@email.com"
+              placeholder="For booking confirmation & updates"
               value={form.email}
               onChange={handleChange}
               required
