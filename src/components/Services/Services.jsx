@@ -28,6 +28,7 @@ export default function Services() {
 
         <div className="services-grid">
 
+          {/* ✅ MOST POPULAR */}
           <div className="service-card highlight">
             <span className="badge">Most Popular</span>
             <div className="icon">🌍</div>
@@ -37,7 +38,9 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="service-card">
+          {/* ✅ MOST POPULAR */}
+          <div className="service-card highlight">
+            <span className="badge">Most Popular</span>
             <div className="icon">✈️</div>
             <h3>Flight Tickets</h3>
             <p>
@@ -53,7 +56,9 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="service-card">
+          {/* ✅ MOST POPULAR */}
+          <div className="service-card highlight">
+            <span className="badge">Most Popular</span>
             <div className="icon">🚗</div>
             <h3>Cab / Vehicle Booking</h3>
             <p>

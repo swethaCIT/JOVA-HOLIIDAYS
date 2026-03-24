@@ -11,6 +11,7 @@
 /* SECTION */
 /* ========================= */
 .about {
+  position: relative;
   padding: 70px 40px;
   background: linear-gradient(135deg, #284f73, #85b7e8, #ff9800);
   background-size: 200% 200%;
@@ -24,7 +25,7 @@
   background: rgba(0,0,0,0.15);
   pointer-events: none;
 }
-  
+
 @keyframes gradientMove {
   0% { background-position: 0% }
   50% { background-position: 100% }
@@ -35,7 +36,7 @@
 /* OUTER CARD */
 /* ========================= */
 .about-outer {
-  position: relative; /* 🔥 important for outer buttons */
+  position: relative;
 
   max-width: 1200px;
   margin: auto;
@@ -84,7 +85,7 @@
   gap: 20px;
   padding: 15px 20px;
 
-  background: rgba(255, 255, 255, 0.527);
+  background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(15px);
   border-radius: 15px;
 }
@@ -106,20 +107,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 18px; /* 🔥 slightly increased */
+  gap: 18px;
 }
 
 .about-right h2 {
   font-size: 32px;
   margin-bottom: 5px;
-  color: #011566;
+  color:#0d3b66;
 }
 
-/* INTRO */
 .about-intro {
   font-size: 15px;
   line-height: 1.7;
-  color: #374151;   
+  color: #374151;
   margin-bottom: 20px;
 }
 
@@ -128,14 +128,15 @@
 /* ========================= */
 .carousel {
   overflow: hidden;
+  touch-action: pan-y;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.6s ease;
+  transition: transform 0.5s ease;
+  will-change: transform;
 }
 
-/* 🔥 FULL SLIDE (intro + card) */
 .carousel-slide {
   min-width: 100%;
   padding-right: 10px;
@@ -189,7 +190,7 @@
 }
 
 /* ========================= */
-/* 🔥 OUTER BUTTONS (FIXED) */
+/* OUTER BUTTONS */
 /* ========================= */
 .outer-btn {
   position: absolute;
@@ -204,7 +205,7 @@
   align-items: center;
   justify-content: center;
 
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.25);
   backdrop-filter: blur(10px);
 
   color: white;
@@ -212,11 +213,13 @@
   cursor: pointer;
   z-index: 10;
 
+  opacity: 0.7;
   transition: all 0.3s ease;
 }
 
 .outer-btn:hover {
   background: var(--orange);
+  opacity: 1;
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -250,6 +253,12 @@
   width: 22px;
   background: var(--orange);
   border-radius: 10px;
+}
+
+/* 🔥 Mobile tap feedback */
+.dot:active {
+  transform: scale(1.3);
+  background: var(--orange);
 }
 
 /* ========================= */
@@ -336,13 +345,19 @@
     padding: 6px 12px;
   }
 
+  /* ✅ Center dots */
   .dots {
     justify-content: center;
+    margin-top: 15px;
   }
 
+  /* ❌ REMOVE arrows completely */
   .outer-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 18px;
+    display: none;
+  }
+
+  /* smoother mobile animation */
+  .carousel-track {
+    transition: transform 0.4s ease;
   }
 }
