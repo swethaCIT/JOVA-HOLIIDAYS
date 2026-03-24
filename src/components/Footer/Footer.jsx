@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -16,10 +17,17 @@ export default function Footer() {
           </p>
 
           <div className="socials">
-            <a href="https://www.instagram.com/jova_holidays/" target="_blank">📷</a>
-            <a href="#">👍</a>
-            <a href="#">🐦</a>
-            <a href="#">▶</a>
+            <a href="https://www.instagram.com/jova_holidays?igsh=MXdyYWE2b2hhMnduNw==" target="_blank" rel="noopener noreferrer">
+              <FaInstagram />
+            </a>
+
+            <a href="https://www.facebook.com/share/1BdavCKZoT/" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF />
+            </a>
+
+            <a href="https://youtube.com/@jovaholidays?si=-sfUu6s2Nd5w63wP" target="_blank" rel="noopener noreferrer">
+              <FaYoutube />
+            </a>
           </div>
         </div>
 
@@ -38,13 +46,22 @@ export default function Footer() {
         {/* DESTINATIONS */}
         <div className="footer-col">
           <h3>Popular Destinations</h3>
-          <ul>
-            <li>Goa Getaways</li>
-            <li>Kerala Backwaters</li>
-            <li>Manali Adventures</li>
-            <li>Kashmir Paradise</li>
-            <li>Rajasthan Heritage</li>
-            <li>Andaman Escape</li>
+
+          <ul className="destination-grid">
+            <li>Goa</li>
+            <li>Kerala</li>
+            <li>Manali</li>
+            <li>Kashmir</li>
+            <li>Andaman</li>
+            <li>Lakshadweep</li>
+            <li>Agra</li>
+            <li>Singapore</li>
+            <li>Thailand</li>
+            <li>Vietnam</li>
+            <li>Bali</li>
+            <li>Maldives</li>
+            <li>Dubai</li>
+            <li>Europe</li>
           </ul>
         </div>
 
@@ -54,7 +71,7 @@ export default function Footer() {
 
           <p>
             📍 95, Velayudham Street, Ramapuram, Alandur,<br/>
-             Chennai - 600016
+            Chennai - 600016
           </p>
 
           <p>📞 +91 93633 11085</p>
@@ -66,7 +83,7 @@ export default function Footer() {
       {/* BOTTOM */}
       <div className="footer-bottom">
         <p>
-          © 2026 Jova Holidays. <br /> Crafted with ❤️ for unforgettable journeys.
+          Crafted with ❤️ for unforgettable journeys.  <br /> © 2026 Jova Holidays.
         </p>
 
         <div className="footer-links">
