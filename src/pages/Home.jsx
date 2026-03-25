@@ -11,12 +11,27 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <How />
-      <Testimonials />
-      <CTA />
+
+      <div id="home">
+        <Hero />
+      </div>
+
+      <div id="packages">
+        <How />
+      </div>
+
+      <div id="about">
+        <About />
+      </div>
+
+      <div id="services">
+        <Services />
+      </div>
+
+      <div id="cta">
+        <CTA />
+      </div>
+
       <Footer />
     </>
   );

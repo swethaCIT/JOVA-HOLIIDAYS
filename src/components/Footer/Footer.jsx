@@ -2,6 +2,29 @@ import "./Footer.css";
 import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
+
+  // ✅ SECTION MAPPING (same as Navbar)
+  const sectionMap = {
+    Home: "home",
+    Packages: "packages",
+    About: "about",
+    Services: "services",
+    Contact: "cta", // ✅ important
+  };
+
+  // ✅ SCROLL FUNCTION (WITH OFFSET)
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      const yOffset = -80;
+      const y =
+        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="footer">
 
@@ -34,12 +57,17 @@ export default function Footer() {
         {/* QUICK LINKS */}
         <div className="footer-col">
           <h3>Quick Links</h3>
+
           <ul>
-            <li>Home</li>
-            <li>Packages</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Contact</li>
+            {["Home", "Packages", "About", "Services", "Contact"].map((item) => (
+              <li
+                key={item}
+                onClick={() => scrollToSection(sectionMap[item])}
+                style={{ cursor: "pointer" }}
+              >
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
 

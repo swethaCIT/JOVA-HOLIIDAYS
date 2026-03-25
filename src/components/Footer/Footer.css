@@ -43,6 +43,15 @@
   transition: 0.3s;
 }
 
+..footer-col ul li {
+  transition: 0.3s;
+}
+
+.footer-col ul li:hover {
+  color: #ff7a00;
+  transform: translateX(5px);
+}
+
 .footer-col li:hover {
   color: #ff7a18;
   transform: translateX(5px);
@@ -97,13 +106,12 @@
 
 .destination-grid li {
   font-size: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  cursor: default;
 }
 
 .destination-grid li:hover {
-  color: #ff7a18;
-  transform: translateX(5px);
+  color: inherit;
+  transform: none;
 }
 
 /* ================= BOTTOM ================= */
