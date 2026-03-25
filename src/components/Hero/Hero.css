@@ -3,7 +3,7 @@
 /* ========================= */
 :root {
   --orange: #ff9800;
-  --orange-dark: #e68900;
+  --orange-dark: #ff9901;
 
   --blue: #0d3b66;
   --blue-light: #1e5f9e;
@@ -73,7 +73,7 @@
 }
 
 .logo-icon {
-  color: var(--orange);
+  color: #ff9800;
   font-size: 22px;
 }
 
@@ -107,7 +107,7 @@
 /* TAGLINE */
 /* ========================= */
 .hero-tagline {
-  color: var(--orange);
+  color: #ff9800;
   font-weight: 500;
   margin-bottom: 30px;
 }
@@ -134,7 +134,7 @@
 
 /* Primary */
 .btn.primary {
-  background: var(--orange);
+  background:#ff9800;
   color: white;
   border: none;
 }

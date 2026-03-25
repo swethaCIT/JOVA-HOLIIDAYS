@@ -93,9 +93,9 @@
   font-size: 18px;
 }
 
-.icon.green { background: #22c55e; }
-.icon.blue { background: var(--blue); }
-.icon.orange { background: var(--orange); }
+.icon.green { background: #22d664; }
+.icon.blue { background: #17538b; }
+.icon.orange { background: #ff9800; }
 
 /* FORM WRAPPER */
 .form-wrapper {
@@ -166,7 +166,7 @@
 /* BUTTON */
 button {
   margin-top: 18px;
-  background: var(--orange);
+  background: #ff9800;
   color: white;
   border: none;
   padding: 14px;

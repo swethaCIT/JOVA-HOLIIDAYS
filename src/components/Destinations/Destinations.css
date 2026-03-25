@@ -22,7 +22,12 @@
   position: relative;
   overflow: hidden;
 
-  background: linear-gradient(120deg, var(--orange), var(--blue));
+  background-image: url("/src/assets/images/Dbanner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* gradient overlay via pseudo element */
 }
 
 /* animation */
