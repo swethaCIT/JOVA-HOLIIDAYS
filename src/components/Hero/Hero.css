@@ -20,21 +20,16 @@
   position: relative;
   width: 100%;
 
-  /* Mobile viewport-safe height (100dvh) + fallback consistency */
-  min-height: calc(var(--vh, 1vh) * 100);
-  height: calc(var(--vh, 1vh) * 100);
-  max-height: 100dvh;
+  /* ✅ FIXED */
+  min-height: 100vh;
 
-  overflow: hidden;
-  overflow-x: hidden;
+  overflow-x: hidden; /* keep horizontal safe */
+  /* ❌ remove overflow:hidden */
 
-  /* Background properties - image set via inline style */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: scroll;
 
-  /* Smooth fade transition for image carousel */
   transition: background-image 1s ease-in-out;
 
   display: flex;
@@ -43,7 +38,6 @@
   text-align: center;
 
   padding: 100px 30px 0;
-  -webkit-tap-highlight-color: transparent;
 }
 
 /* Overlay */

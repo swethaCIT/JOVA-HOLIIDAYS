@@ -69,6 +69,11 @@ body {
   overflow-x: hidden;
 }
 html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+html, body {
   background-color: #ffffff !important;
   color: #000000 !important;
 }
