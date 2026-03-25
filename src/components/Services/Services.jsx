@@ -32,7 +32,7 @@ export default function Services() {
           <div className="service-card highlight">
             <span className="badge">Most Popular</span>
             <div className="icon">🌍</div>
-            <h3>Tour Packages</h3>
+            <h3>Destination Tours</h3>
             <p>
               Complete domestic & international tour packages for every traveler.
             </p>
@@ -94,7 +94,7 @@ export default function Services() {
             <div className="icon">👥</div>
             <h3>Group Tours</h3>
             <p>
-              Fun and affordable group travel packages for shared experiences.
+              Fun and affordable group travel destinations for shared experiences.
             </p>
           </div>
 

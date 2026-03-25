@@ -72,7 +72,7 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="hero-buttons">
-          <button className="btn primary">Explore Packages</button>
+          <button className="btn primary">Explore Destinations</button>
           <button className="btn secondary">Plan Your Trip</button>
         </div>
 

@@ -32,7 +32,7 @@
 /* HEADER */
 .how-header h2 {
   font-size: 40px;
-  color: var(--blue);
+  color: #01142e;
   margin-bottom: 10px;
 }
 
@@ -111,7 +111,7 @@
 
 /* TEXT */
 .how-card h3 {
-  color: var(--blue);
+  color:#01142e;
 }
 
 .how-card p {
@@ -217,7 +217,7 @@
 
   /* TEXT */
   .how-card h3 {
-    color: var(--blue);
+    color: #01142e;
   }
 
   .how-card p {

@@ -13,7 +13,7 @@
 .about {
   position: relative;
   padding: 70px 40px;
-  background: linear-gradient(135deg, #284f73, #85b7e8, #ff9800);
+  background: linear-gradient(135deg, #80a5c77a, #85b7e8, #ffcd81);
   background-size: 200% 200%;
   animation: gradientMove 10s ease infinite;
 }
@@ -153,7 +153,7 @@
 .carousel-card h3 {
   font-size: 22px;
   margin-bottom: 10px;
-  color: #ff8400;
+  color: #0d3b66;
 }
 
 .carousel-card p {
@@ -177,7 +177,7 @@
   font-size: 12px;
   color: #0b1f3a;
 
-  background: rgba(255,255,255,0.15);
+  background: #ff7b00a5;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.2);
 
@@ -185,7 +185,7 @@
 }
 
 .circle:hover {
-  background: var(--orange);
+  background: #ff7b00;
   transform: scale(1.05);
 }
 

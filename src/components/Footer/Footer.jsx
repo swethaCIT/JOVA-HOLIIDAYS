@@ -5,7 +5,7 @@ import { scrollToSection } from "../../utils/scroll";
 export default function Footer() {
   const sectionMap = {
     Home: "home",
-    Packages: "packages",
+    Destinations: "destinations",
     About: "about",
     Services: "services",
     Contact: "cta",
@@ -39,7 +39,7 @@ export default function Footer() {
         <div className="footer-col">
           <h3>Quick Links</h3>
           <ul>
-            {["Home", "Packages", "About", "Services", "Contact"].map((item) => (
+            {["Home", "Destinations", "About", "Services", "Contact"].map((item) => (
               <li
                 key={item}
                 onClick={() => scrollToSection(sectionMap[item], 80)}

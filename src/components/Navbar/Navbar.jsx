@@ -6,11 +6,11 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("Home");
 
-  const navItems = ["Home", "Packages", "About", "Services", "Contact"];
+  const navItems = ["Home", "Destinations", "About", "Services", "Contact"];
 
   const sectionMap = {
     Home: "home",
-    Packages: "packages",
+    Destinations: "destinations",
     About: "about",
     Services: "services",
     Contact: "cta",
