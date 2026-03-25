@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Navbar.css";
+import { scrollToSection } from "../../utils/scroll";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -7,7 +8,6 @@ export default function Navbar() {
 
   const navItems = ["Home", "Packages", "About", "Services", "Contact"];
 
-  // ✅ SINGLE SOURCE OF TRUTH
   const sectionMap = {
     Home: "home",
     Packages: "packages",
@@ -16,52 +16,17 @@ export default function Navbar() {
     Contact: "cta",
   };
 
-  // ✅ UNIVERSAL SCROLL FUNCTION (BEST PRACTICE)
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-
-    if (!section) {
-      console.warn("❌ Section not found:", id);
-      return;
-    }
-
-    const navbarHeight = 80;
-
-    const y =
-      section.getBoundingClientRect().top +
-      window.pageYOffset -
-      navbarHeight;
-
-    window.scrollTo({
-      top: y,
-      behavior: "smooth",
-    });
-  };
-
-  // ✅ NAV CLICK (FIXED)
   const handleNavClick = (item) => {
     setActive(item);
-
-    const sectionId = sectionMap[item];
-
-    // ✅ ensure DOM ready (safe in production)
-    requestAnimationFrame(() => {
-      scrollToSection(sectionId);
-    });
-
     setMenuOpen(false);
+    scrollToSection(sectionMap[item], 80);
   };
 
-  // ✅ BOOK NOW
   const scrollToForm = () => {
-    requestAnimationFrame(() => {
-      scrollToSection("cta-form");
-    });
-
     setMenuOpen(false);
+    scrollToSection("cta-form", 80);
   };
 
-  // ✅ ACTIVE ON SCROLL (IMPROVED + STABLE)
   useEffect(() => {
     const handleScroll = () => {
       const scrollPos = window.scrollY + 150;
@@ -79,7 +44,7 @@ export default function Navbar() {
       });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -109,7 +74,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* ✅ MOBILE MENU */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <div className="menu-card">
           <div className="close-btn" onClick={() => setMenuOpen(false)}>
@@ -119,9 +83,7 @@ export default function Navbar() {
           {navItems.map((item) => (
             <div
               key={item}
-              className={`mobile-item ${
-                active === item ? "active" : ""
-              }`}
+              className={`mobile-item ${active === item ? "active" : ""}`}
               onClick={() => handleNavClick(item)}
             >
               {item}
