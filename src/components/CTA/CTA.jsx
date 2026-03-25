@@ -93,7 +93,7 @@ Message: ${form.message}`;
 
       {/* FORM CARD */}
       <div className="form-wrapper">
-        <form id="cta-form" form className="contact-form" onSubmit={handleSubmit}>
+        <form id="cta-form" className="contact-form" onSubmit={handleSubmit}>
 
           <h3>Send Us a Message</h3>
 

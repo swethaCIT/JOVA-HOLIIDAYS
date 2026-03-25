@@ -3,26 +3,44 @@ import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
 
-  // ✅ SECTION MAPPING (same as Navbar)
+  // ✅ SAME SOURCE OF TRUTH (MATCH NAVBAR)
   const sectionMap = {
     Home: "home",
     Packages: "packages",
     About: "about",
     Services: "services",
-    Contact: "cta", // ✅ important
+    Contact: "cta",
   };
 
-  // ✅ SCROLL FUNCTION (WITH OFFSET)
+  // ✅ UNIVERSAL SCROLL FUNCTION (PRO LEVEL)
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
 
-    if (section) {
-      const yOffset = -80;
-      const y =
-        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-      window.scrollTo({ top: y, behavior: "smooth" });
+    if (!section) {
+      console.warn("❌ Footer: Section not found:", id);
+      return;
     }
+
+    const navbarHeight = 80;
+
+    const y =
+      section.getBoundingClientRect().top +
+      window.pageYOffset -
+      navbarHeight;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+  };
+
+  // ✅ CLICK HANDLER (IMPORTANT FIX)
+  const handleFooterClick = (item) => {
+    const sectionId = sectionMap[item];
+
+    requestAnimationFrame(() => {
+      scrollToSection(sectionId);
+    });
   };
 
   return (
@@ -40,15 +58,27 @@ export default function Footer() {
           </p>
 
           <div className="socials">
-            <a href="https://www.instagram.com/jova_holidays?igsh=MXdyYWE2b2hhMnduNw==" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.instagram.com/jova_holidays?igsh=MXdyYWE2b2hhMnduNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram />
             </a>
 
-            <a href="https://www.facebook.com/share/1BdavCKZoT/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.facebook.com/share/1BdavCKZoT/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaFacebookF />
             </a>
 
-            <a href="https://youtube.com/@jovaholidays?si=-sfUu6s2Nd5w63wP" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://youtube.com/@jovaholidays?si=-sfUu6s2Nd5w63wP"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaYoutube />
             </a>
           </div>
@@ -62,7 +92,7 @@ export default function Footer() {
             {["Home", "Packages", "About", "Services", "Contact"].map((item) => (
               <li
                 key={item}
-                onClick={() => scrollToSection(sectionMap[item])}
+                onClick={() => handleFooterClick(item)}
                 style={{ cursor: "pointer" }}
               >
                 {item}
@@ -111,7 +141,8 @@ export default function Footer() {
       {/* BOTTOM */}
       <div className="footer-bottom">
         <p>
-          Crafted with ❤️ for unforgettable journeys.  <br /> © 2026 Jova Holidays.
+          Crafted with ❤️ for unforgettable journeys. <br />
+          © 2026 Jova Holidays.
         </p>
 
         <div className="footer-links">

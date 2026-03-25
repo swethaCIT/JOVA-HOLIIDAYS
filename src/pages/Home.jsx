@@ -3,7 +3,6 @@ import Hero from "../components/Hero/Hero";
 import About from "../components/About/About";
 import Services from "../components/Services/Services";
 import How from "../components/How/How";
-import Testimonials from "../components/Testimonials/Testimonials";
 import CTA from "../components/CTA/CTA";
 import Footer from "../components/Footer/Footer";
 
@@ -12,25 +11,25 @@ export default function Home() {
     <>
       <Navbar />
 
-      <div id="home">
+      <section id="home">
         <Hero />
-      </div>
+      </section>
 
-      <div id="packages">
+      <section id="packages">
         <How />
-      </div>
+      </section>
 
-      <div id="about">
+      <section id="about">
         <About />
-      </div>
+      </section>
 
-      <div id="services">
+      <section id="services">
         <Services />
-      </div>
+      </section>
 
-      <div id="cta">
+      <section id="cta">
         <CTA />
-      </div>
+      </section>
 
       <Footer />
     </>

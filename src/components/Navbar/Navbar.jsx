@@ -7,81 +7,73 @@ export default function Navbar() {
 
   const navItems = ["Home", "Packages", "About", "Services", "Contact"];
 
-  // ✅ SECTION MAPPING (PRO WAY)
+  // ✅ SINGLE SOURCE OF TRUTH
   const sectionMap = {
     Home: "home",
-    Packages: "packages",   // 🔥 will NOT go to how anymore
+    Packages: "packages",
     About: "about",
     Services: "services",
-    Contact: "cta",         // 🔥 contact → CTA section
+    Contact: "cta",
   };
 
-  // ✅ SCROLL FUNCTION (PERFECT OFFSET)
+  // ✅ UNIVERSAL SCROLL FUNCTION (BEST PRACTICE)
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
 
-    if (section) {
-      const yOffset = -80; // adjust based on navbar height
-      const y =
-        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-      window.scrollTo({ top: y, behavior: "smooth" });
+    if (!section) {
+      console.warn("❌ Section not found:", id);
+      return;
     }
+
+    const navbarHeight = 80;
+
+    const y =
+      section.getBoundingClientRect().top +
+      window.pageYOffset -
+      navbarHeight;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
   };
 
-  // ✅ NAV CLICK
+  // ✅ NAV CLICK (FIXED)
   const handleNavClick = (item) => {
     setActive(item);
 
-    let sectionId;
+    const sectionId = sectionMap[item];
 
-    if (item === "Contact") {
-      sectionId = "cta"; // ✅ Contact → CTA
-    } else {
-      sectionId = item.toLowerCase();
-    }
-
-    const section = document.getElementById(sectionId);
-
-    if (section) {
-      const yOffset = -80;
-      const y =
-        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
+    // ✅ ensure DOM ready (safe in production)
+    requestAnimationFrame(() => {
+      scrollToSection(sectionId);
+    });
 
     setMenuOpen(false);
   };
 
-  // ✅ BOOK NOW → FORM
+  // ✅ BOOK NOW
   const scrollToForm = () => {
-    const form = document.getElementById("cta-form");
-
-    if (form) {
-      const yOffset = -80;
-      const y =
-        form.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
+    requestAnimationFrame(() => {
+      scrollToSection("cta-form");
+    });
 
     setMenuOpen(false);
   };
 
-  // ✅ ACTIVE ON SCROLL (FIXED)
+  // ✅ ACTIVE ON SCROLL (IMPROVED + STABLE)
   useEffect(() => {
     const handleScroll = () => {
-      const entries = Object.entries(sectionMap);
+      const scrollPos = window.scrollY + 150;
 
-      entries.forEach(([name, id]) => {
+      Object.entries(sectionMap).forEach(([name, id]) => {
         const section = document.getElementById(id);
         if (!section) return;
 
-        const top = section.offsetTop - 120;
+        const top = section.offsetTop;
         const bottom = top + section.offsetHeight;
 
-        if (window.scrollY >= top && window.scrollY < bottom) {
+        if (scrollPos >= top && scrollPos < bottom) {
           setActive(name);
         }
       });
@@ -117,7 +109,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MOBILE MENU */}
+      {/* ✅ MOBILE MENU */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <div className="menu-card">
           <div className="close-btn" onClick={() => setMenuOpen(false)}>
