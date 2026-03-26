@@ -32,16 +32,42 @@
 /* ========================= */
 /* LOGO */
 /* ========================= */
+/* ========================= */
+/* LOGO DEFAULT (DESKTOP) */
+/* ========================= */
 .logo {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .logo img {
-  margin-top: 8px;
   height: 80px;
   width: auto;
   object-fit: contain;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+/* ========================= */
+/* MOBILE FIX */
+/* ========================= */
+@media (max-width: 768px) {
+  .navbar {
+    position: relative; /* needed for absolute center */
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logo img {
+    margin-top: 8px;
+    margin-left: 0; /* remove side shift */
+    height: 70px;   /* slightly smaller for mobile */
+  }
 }
 
 /* ========================= */
