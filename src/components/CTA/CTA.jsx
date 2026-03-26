@@ -65,21 +65,18 @@ Message: ${form.message}`;
           <div className="icon green">📞</div>
           <h4>Call Us</h4>
           <p>+91 9363311085</p>
-          <span>Mon - Sun : 9 AM - 9 PM</span>
         </div>
 
         <div className="card">
           <div className="icon blue">✉️</div>
           <h4>Email Us</h4>
           <p>travel@jovaholidays.com</p>
-          <span>We reply within an hour</span>
         </div>
 
         <div className="card">
           <div className="icon orange">📍</div>
           <h4>Visit Us</h4>
           <p>Chennai, India</p>
-          <span>Serving Travelers Worldwide</span>
         </div>
 
       </div>
