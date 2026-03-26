@@ -16,20 +16,21 @@ export default function Footer() {
       <div className="footer-container">
 
         {/* BRAND */}
-        <div className="footer-col">
-          <h2 className="logo">✈ Jova Holidays</h2>
+        <div className="footer-col footer-brand">
+          <h2 className="footer-logo">✈ Jova Holidays</h2>
           <p>
             Discover the world like never before. From serene beaches to majestic
             mountains, we craft unforgettable journeys tailored just for you.
           </p>
+
           <div className="socials">
-            <a href="https://www.instagram.com/jova_holidays?igsh=MXdyYWE2b2hhMnduNw==" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/jova_holidays" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>
-            <a href="https://www.facebook.com/share/1BdavCKZoT/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
               <FaFacebookF />
             </a>
-            <a href="https://youtube.com/@jovaholidays?si=-sfUu6s2Nd5w63wP" target="_blank" rel="noopener noreferrer">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
               <FaYoutube />
             </a>
           </div>
@@ -43,7 +44,6 @@ export default function Footer() {
               <li
                 key={item}
                 onClick={() => scrollToSection(sectionMap[item], 80)}
-                style={{ cursor: "pointer" }}
               >
                 {item}
               </li>
@@ -55,9 +55,13 @@ export default function Footer() {
         <div className="footer-col">
           <h3>Popular Destinations</h3>
           <ul className="destination-grid">
-            {["Goa","Kerala","Manali","Kashmir","Andaman","Lakshadweep",
-              "Agra","Singapore","Thailand","Vietnam","Bali","Maldives","Dubai","Europe"
-            ].map((d) => <li key={d}>{d}</li>)}
+            {[
+              "Goa", "Kerala", "Manali", "Kashmir", "Andaman", "Lakshadweep",
+              "Agra", "Singapore", "Thailand", "Vietnam", "Bali", "Maldives",
+              "Dubai", "Europe"
+            ].map((d) => (
+              <li key={d}>{d}</li>
+            ))}
           </ul>
         </div>
 
@@ -71,11 +75,13 @@ export default function Footer() {
 
       </div>
 
+      {/* BOTTOM */}
       <div className="footer-bottom">
         <p>
           Crafted with ❤️ for unforgettable journeys. <br />
           © 2026 Jova Holidays.
         </p>
+
         <div className="footer-links">
           <span>Privacy Policy</span>
           <span>Terms of Service</span>
