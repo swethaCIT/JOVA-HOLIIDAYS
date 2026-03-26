@@ -1,3 +1,4 @@
+
 /* ========================= */
 /* RESET */
 /* ========================= */
@@ -74,15 +75,13 @@
   padding: 10px 22px;
   border-radius: 30px;
   border: none;
-
+  margin-top: 0;        /* remove extra space */
+  position: relative;
+  top: -2px;           /* move UP */
   background: linear-gradient(135deg, #ff7a18, #ffb347);
   color: white;
   cursor: pointer;
   transition: 0.3s;
-}
-
-.cta-btn:hover {
-  opacity: 0.9;
 }
 
 /* ========================= */

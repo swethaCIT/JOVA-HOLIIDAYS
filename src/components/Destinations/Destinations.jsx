@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Destinations.css";
+import { scrollToSection } from "../../utils/scroll";
 
 const domesticData = [
   { name: "Goa", duration: "2N/3D", tagline: "Sun, Sand & Party", ideal: "Friends, Couples", image: "Goa.jpg" },
@@ -98,7 +99,7 @@ export default function Destinations() {
               </div>
 
               {/* BUTTON (UNCHANGED COLOR) */}
-              <button className="book-btn">Book Now</button>
+              <button className="book-btn"onClick={() => scrollToSection("cta-form", 90)}> Book Now </button>
             </div>
           </div>
         ))}
