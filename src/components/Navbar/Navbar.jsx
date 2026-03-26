@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Navbar.css";
 import { scrollToSection } from "../../utils/scroll";
+import logo from "../../assets/logo/Jova-Logo.png";// ✅ FIXED PATH
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,8 +52,12 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <div className="logo">WanderIndia</div>
+        {/* ✅ LOGO */}
+        <div className="logo">
+          <img src={logo} alt="Jova-Holidays Logo" />
+        </div>
 
+        {/* ✅ NAV ITEMS */}
         <div className="nav-center">
           {navItems.map((item) => (
             <div
@@ -65,15 +70,18 @@ export default function Navbar() {
           ))}
         </div>
 
+        {/* ✅ BOOK NOW BUTTON */}
         <button className="cta-btn" onClick={scrollToForm}>
           Book Now
         </button>
 
+        {/* ✅ HAMBURGER */}
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           ☰
         </div>
       </nav>
 
+      {/* ✅ MOBILE MENU */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <div className="menu-card">
           <div className="close-btn" onClick={() => setMenuOpen(false)}>
