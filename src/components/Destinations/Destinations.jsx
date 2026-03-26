@@ -2,21 +2,21 @@ import { useState } from "react";
 import "./Destinations.css";
 
 const domesticData = [
-  { name: "Goa", duration: "2N/3D", tagline: "Sun, Sand & Party", ideal: "Friends, Couples" },
-  { name: "Kerala", duration: "4N/5D", tagline: "God’s Own Country", ideal: "Honeymoon, Family" },
-  { name: "Coorg & Mysore", duration: "3N/4D", tagline: "Coffee Hills & Heritage", ideal: "Couples, Family" },
-  { name: "Kullu & Manali", duration: "4N/5D", tagline: "Snow & Adventure", ideal: "Honeymoon, Friends" },
-  { name: "Kashmir", duration: "4N/5D", tagline: "Paradise on Earth", ideal: "Family, Couples" },
-  { name: "Sikkim & Darjeeling", duration: "4N/5D", tagline: "Hills & Tea Gardens", ideal: "Nature Lovers" },
-  { name: "Meghalaya", duration: "4N/5D", tagline: "Clouds & Waterfalls", ideal: "Explorers" },
-  { name: "Andaman & Nicobar", duration: "4N/5D", tagline: "Island Escape", ideal: "Couples" },
-  { name: "Lakshadweep", duration: "3N/4D", tagline: "Exotic Beaches", ideal: "Luxury, Honeymoon" },
-  { name: "Delhi – Agra – Jaipur", duration: "4N/5D", tagline: "Royal Heritage", ideal: "History Lovers" },
+  { name: "Goa", duration: "2N/3D", tagline: "Sun, Sand & Party", ideal: "Friends, Couples", image: "Goa.jpg" },
+  { name: "Kerala", duration: "4N/5D", tagline: "God's Own Country", ideal: "Honeymoon, Family", image: "Kerala.png" },
+  { name: "Coorg & Mysore", duration: "3N/4D", tagline: "Coffee Hills & Heritage", ideal: "Couples, Family", image: "Mysore.png" },
+  { name: "Kullu & Manali", duration: "4N/5D", tagline: "Snow & Adventure", ideal: "Honeymoon, Friends", image: "Manali.png" },
+  { name: "Kashmir", duration: "4N/5D", tagline: "Paradise on Earth", ideal: "Family, Couples", image: "Kashmir.png" },
+  { name: "Sikkim & Darjeeling", duration: "4N/5D", tagline: "Hills & Tea Gardens", ideal: "Nature Lovers", image: "Sikkim.png" },
+  { name: "Meghalaya", duration: "4N/5D", tagline: "Clouds & Waterfalls", ideal: "Explorers", image: "Meghalaya.png" },
+  { name: "Andaman & Nicobar", duration: "4N/5D", tagline: "Island Escape", ideal: "Couples", image: "Andaman.png" },
+  { name: "Lakshadweep", duration: "3N/4D", tagline: "Exotic Beaches", ideal: "Luxury, Honeymoon", image: "Lakshadweep.jpg" },
+  { name: "Delhi – Agra – Jaipur", duration: "4N/5D", tagline: "Royal Heritage", ideal: "History Lovers", image: "Agra.png" },
 ];
 
 const internationalData = [
-  { name: "Singapore", duration: "4N/5D", tagline: "City & Family Fun", ideal: "Family" },
-  { name: "Malaysia", duration: "3N/4D", tagline: "Truly Asia", ideal: "Friends" },
+  { name: "Singapore", duration: "4N/5D", tagline: "City & Family Fun", ideal: "Family", image: "Singapore.png" },
+  { name: "Malaysia", duration: "3N/4D", tagline: "Truly Asia", ideal: "Friends", image: "Malaysia.png" },
   { name: "Thailand", duration: "4N/5D", tagline: "Beaches & Nightlife", ideal: "Couples" },
   { name: "Vietnam", duration: "4N/5D", tagline: "Culture & Nature", ideal: "Explorers" },
   { name: "Bali", duration: "4N/5D", tagline: "Romantic Escape", ideal: "Honeymoon" },
@@ -79,7 +79,7 @@ export default function Destinations() {
             {/* IMAGE */}
             <div
               className="dest-img"
-              style={{ backgroundImage: `url(/images/${item.name}.jpg)` }}
+              style={{ backgroundImage: item.image ? `url(/images/${item.image})` : "none" }}
             >
               {/* ✅ DURATION GLASS BADGE */}
               <span className="duration-badge">{item.duration}</span>
