@@ -17,15 +17,15 @@ const domesticData = [
 const internationalData = [
   { name: "Singapore", duration: "4N/5D", tagline: "City & Family Fun", ideal: "Family", image: "Singapore.png" },
   { name: "Malaysia", duration: "3N/4D", tagline: "Truly Asia", ideal: "Friends", image: "Malaysia.png" },
-  { name: "Thailand", duration: "4N/5D", tagline: "Beaches & Nightlife", ideal: "Couples" },
-  { name: "Vietnam", duration: "4N/5D", tagline: "Culture & Nature", ideal: "Explorers" },
-  { name: "Bali", duration: "4N/5D", tagline: "Romantic Escape", ideal: "Honeymoon" },
-  { name: "Dubai", duration: "4N/5D", tagline: "Luxury & Desert", ideal: "Shopping" },
-  { name: "Maldives", duration: "3N/4D", tagline: "Island Romance", ideal: "Couples" },
-  { name: "Europe", duration: "10N/11D", tagline: "Timeless Beauty", ideal: "Family" },
-  { name: "Japan", duration: "6N/7D", tagline: "Modern & Tradition", ideal: "Culture Lovers" },
-  { name: "Kenya", duration: "6N/7D", tagline: "Wildlife Safari", ideal: "Adventure" },
-  { name: "Georgia", duration: "5N/6D", tagline: "Hidden Europe", ideal: "Nature Lovers" },
+  { name: "Thailand", duration: "4N/5D", tagline: "Beaches & Nightlife", ideal: "Couples", image: "Thailand.jpg" },
+  { name: "Vietnam", duration: "4N/5D", tagline: "Culture & Nature", ideal: "Explorers", image: "Vietnam.png" },
+  { name: "Bali", duration: "4N/5D", tagline: "Romantic Escape", ideal: "Honeymoon", image: "Bali.png" },
+  { name: "Dubai", duration: "4N/5D", tagline: "Luxury & Desert", ideal: "Shopping", image: "Dubai.png" },
+  { name: "Maldives", duration: "3N/4D", tagline: "Island Romance", ideal: "Couples", image: "Maldives.png" },
+  { name: "Europe", duration: "10N/11D", tagline: "Timeless Beauty", ideal: "Family", image: "Europe.png" },
+  { name: "Japan", duration: "6N/7D", tagline: "Modern & Tradition", ideal: "Culture Lovers", image: "Japan.png" },
+  { name: "Kenya", duration: "6N/7D", tagline: "Wildlife Safari", ideal: "Adventure", image: "Kenya.png" },
+  { name: "Georgia", duration: "5N/6D", tagline: "Hidden Europe", ideal: "Nature Lovers", image: "Georgia.jpg" },
 ];
 
 export default function Destinations() {
