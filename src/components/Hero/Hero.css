@@ -30,7 +30,7 @@
   background-position: center;
   background-size: cover;
 
-  transition: background-image 1s ease-in-out;
+  transition: background-image 3s ease-in-out;
 
   display: flex;
   align-items: center;
