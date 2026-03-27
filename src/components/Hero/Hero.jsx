@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./Hero.css";
 import { scrollToSection } from "../../utils/scroll";
 
@@ -8,26 +8,58 @@ import mountTitlis from "../../assets/images/Mounttitlis.png";
 import cherryBlossoms from "../../assets/images/cherry-blossoms-chidorigafuchi-park-tokyo-japan.jpg";
 import tharDesert from "../../assets/images/Thardesert.png";
 
-export default function Hero() {
-  const [currentImage, setCurrentImage] = useState(0);
+const DISPLAY_DURATION = 5000; // ms each image stays fully visible
+const FADE_DURATION    = 1000; // ms the crossfade takes  (must match CSS)
 
+export default function Hero() {
   const images = [kolsai, glencoe, mountTitlis, cherryBlossoms, tharDesert];
 
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [nextIdx,    setNextIdx]    = useState(1);
+  const [isFading,   setIsFading]   = useState(false);
+
+  // Kick off the slide cycle
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 3000);
+      setIsFading(true);
+    }, DISPLAY_DURATION);
 
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <section
-      className="hero"
-      style={{ backgroundImage: `url(${images[currentImage]})` }}
-    >
-      <div className="hero-overlay"></div>
+  // After the fade completes, promote next → current and prepare the new next
+  useEffect(() => {
+    if (!isFading) return;
 
+    const timeout = setTimeout(() => {
+      setCurrentIdx(nextIdx);
+      setNextIdx((prev) => (prev + 1) % images.length);
+      setIsFading(false);
+    }, FADE_DURATION);
+
+    return () => clearTimeout(timeout);
+  }, [isFading, nextIdx, images.length]);
+
+  return (
+    <section className="hero">
+      {/* Layer 1 — current image, always fully visible */}
+      <div
+        className="hero__bg hero__bg--current"
+        style={{ backgroundImage: `url(${images[currentIdx]})` }}
+        aria-hidden="true"
+      />
+
+      {/* Layer 2 — next image, fades in on top */}
+      <div
+        className={`hero__bg hero__bg--next${isFading ? " hero__bg--visible" : ""}`}
+        style={{ backgroundImage: `url(${images[nextIdx]})` }}
+        aria-hidden="true"
+      />
+
+      {/* Gradient overlay — sits above both bg layers, below content */}
+      <div className="hero-overlay" aria-hidden="true" />
+
+      {/* ── YOUR ORIGINAL CONTENT — untouched ── */}
       <div className="hero-content">
         <div className="hero-logo">
           <span className="logo-icon">✈</span>
@@ -49,7 +81,6 @@ export default function Hero() {
           Your Trusted Partner in Exceptional Travel Experiences
         </p>
 
-        {/* ✅ FIXED BUTTONS */}
         <div className="hero-buttons">
           <button
             className="btn primary"

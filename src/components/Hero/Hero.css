@@ -19,18 +19,8 @@
 .hero {
   position: relative;
   width: 100%;
-
-  /* ✅ FIXED */
   min-height: 100vh;
-
-  overflow-x: hidden; /* keep horizontal safe */
-  /* ❌ remove overflow:hidden */
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  transition: background-image 3s ease-in-out;
+  overflow: hidden;               /* clip bg layers to the section  */
 
   display: flex;
   align-items: center;
@@ -40,15 +30,51 @@
   padding: 100px 30px 0;
 }
 
-/* Overlay */
+/* ========================= */
+/* BACKGROUND LAYERS         */
+/* ========================= */
+
+/* Shared base for both layers */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: opacity;           /* promote to its own compositor layer */
+}
+
+/* Current image — always fully opaque, sits at the bottom */
+.hero__bg--current {
+  z-index: 0;
+  opacity: 1;
+}
+
+/* Next image — transparent by default, slides in above current */
+.hero__bg--next {
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out; /* FADE_DURATION — keep in sync with JS */
+}
+
+/* When isFading === true, fade the next layer fully into view */
+.hero__bg--next.hero__bg--visible {
+  opacity: 1;
+}
+
+/* ========================= */
+/* OVERLAY */
+/* ========================= */
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;                     /* above bg layers, below content */
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.45),
     rgba(0, 0, 0, 0.65)
   );
+  pointer-events: none;
 }
 
 /* ========================= */
@@ -56,7 +82,7 @@
 /* ========================= */
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;                     /* always above everything — never flickers */
   max-width: 900px;
   color: var(--white);
 }
@@ -134,7 +160,7 @@
 
 /* Primary */
 .btn.primary {
-  background:#ff9800;
+  background: #ff9800;
   color: white;
   border: none;
 }
@@ -187,7 +213,7 @@
 }
 
 @keyframes scroll {
-  0% { opacity: 1; top: 8px; }
+  0%   { opacity: 1; top: 8px; }
   100% { opacity: 0; top: 20px; }
 }
 
