@@ -27,10 +27,10 @@ export default function Footer() {
             <a href="https://www.instagram.com/jova_holidays" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/share/1BdavCKZoT/" target="_blank" rel="noopener noreferrer">
               <FaFacebookF />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://youtube.com/@jovaholidays?si=-sfUu6s2Nd5w63wP" target="_blank" rel="noopener noreferrer">
               <FaYoutube />
             </a>
           </div>
