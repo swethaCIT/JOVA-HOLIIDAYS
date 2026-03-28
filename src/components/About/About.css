@@ -358,6 +358,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 15px;
   }
 
   /* 🔥 IMAGE FIX */
@@ -395,6 +396,11 @@
   }
 
   /* 🔥 RIGHT SIDE */
+
+  .about-right {
+  padding: 0 10px;
+}
+
   .about-right h2 {
     font-size: 24px;
   }
@@ -412,9 +418,11 @@
   }
 
   .feature-circles {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+}
 
   .circle {
     font-size: 11px;
@@ -461,4 +469,8 @@
   .carousel-card h3 { font-size: 16px; }
   .carousel-card p { font-size: 12px; }
   .feature-circles { justify-content: center; }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bcdb326 (Cta no changed, about ui fixed, services mp added)
