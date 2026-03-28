@@ -54,7 +54,7 @@
 /* ========================= */
 @media (max-width: 768px) {
   .navbar {
-    position: relative; /* needed for absolute center */
+    position: fixed; /* needed for absolute center */
   }
 
   .logo {

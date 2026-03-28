@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./CTA.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope, faLocationPin } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faEnvelope} from "@fortawesome/free-solid-svg-icons";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -81,8 +81,16 @@ Message: ${form.message}`;
 
         <div className="card">
         <div className="icon orange">
-    <FontAwesomeIcon icon={faLocationPin} />
-  </div>
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="black"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5z"/>
+  </svg>
+</div>
           <h4>Visit Us</h4>
           <p>Chennai, India</p>
         </div>

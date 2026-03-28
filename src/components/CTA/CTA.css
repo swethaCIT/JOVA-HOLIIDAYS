@@ -101,9 +101,9 @@
 }
 
 /* Variants */
-.icon.green { background: #e6f4f8; color: #074877; }
+.icon.green { background:  #eaf1ff; color: #074877; }
 .icon.blue { background: #eaf1ff; color: #0A3D62; }
-.icon.orange { background: #fff4e6; color: #0A3D62; }
+.icon.orange { background:  #eaf1ff; color: #0A3D62; }
 
 /* FORM WRAPPER */
 .form-wrapper {
