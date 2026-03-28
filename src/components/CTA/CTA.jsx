@@ -18,7 +18,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const phoneNumber = "918903814322";
+    const phoneNumber = "919363311085";
 
     const message = `Hello JOVA HOLIDAYS,
 
