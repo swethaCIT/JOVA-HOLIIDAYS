@@ -9,27 +9,27 @@ const reviews = [
   },
   {
     name: "Becky",
-    text: "The trip was planned with excellent coordination and attention to every detail. The entire experience was smooth, comfortable, and completely stress-free from start to finish.",
+    text: "The trip was planned with excellent coordination and attention to every detail. The entire experience was smooth, comfortable, and completely stress-free from beginning to end.",
     rating: 5,
   },
   {
     name: "Dharoon",
-    text: "The team was very professional and guided us clearly at every stage of the journey. The entire experience was smooth, well-managed, and completely hassle-free from start to finish.",
+    text: "The team was very professional and guided us clearly at every stage of the journey. The entire experience was smooth, well-managed, and completely hassle-free from every step of the way.",
     rating: 5,
   },
   {
     name: "Balamurugan",
-    text: "Our Goa trip was perfectly organized with great care given to every detail. The entire experience was smooth, enjoyable, and beautifully managed from start to finish.",
+    text: "Our Goa trip was perfectly organized with great care given to every detail. The entire experience was smooth, enjoyable, and beautifully managed  throughout the entire tri.",
     rating: 5,
   },
   {
     name: "Ajisha",
-    text: "The team provided fantastic service and were very friendly throughout the trip. The entire experience was smooth, relaxing, and completely stress-free from start to finish.",
+    text: "The team provided fantastic service and were very friendly throughout the trip. The entire experience was smooth, relaxing, and completely stress-free across the whole experience.",
     rating: 5,
   },
   {
     name: "Vignesh",
-    text: "Our Kashmir trip was arranged exceptionally well with excellent planning and support. The entire experience was smooth, memorable, and perfectly executed from start to finish.",
+    text: "Our Kashmir trip was arranged exceptionally well with excellent planning and support. The entire experience was smooth, memorable, and perfectly executed at every stage of the trip.",
     rating: 5,
   },
 ];
