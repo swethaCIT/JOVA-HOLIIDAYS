@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./About.css";
-import kolsai from "../../assets/images/Kolsai.png";
-import glencoe from "../../assets/images/Glencoe.jpg";
-import mountTitlis from "../../assets/images/Mounttitlis.png";
-import cherryBlossoms from "../../assets/images/cherry-blossoms-chidorigafuchi-park-tokyo-japan.jpg";
-import tharDesert from "../../assets/images/Thardesert.png";
+import About2 from "../../assets/images/About2.png";
+import About3 from "../../assets/images/About3.png";
+import About4 from "../../assets/images/About4.png";
+
+
 
 export default function About() {
   const [active, setActive] = useState(0);
@@ -20,7 +20,7 @@ export default function About() {
       cardTitle: "Travel Without Hassle",
       cardText: "At Jova Holidays, we believe travel should feel simple and enjoyable — not confusing or overwhelming. From planning to return, every detail is handled with care.",
       features: ["Comfort", "Safety"],
-      image: kolsai,
+      image: About2,
     },
     {
       introTitle: "Designed Around Your Budget",
@@ -32,7 +32,7 @@ export default function About() {
       cardTitle: "Plan Around Your Budget",
       cardText: "Your budget is our starting point. We design trips that give you the best value without compromising on comfort or experience.",
       features: ["Savings", "Best Value"],
-      image: glencoe,
+      image: About3,
     },
     {
       introTitle: "Reliable Support In Every Step",
@@ -43,7 +43,7 @@ export default function About() {
       cardTitle: "Connected With Care Always",
       cardText: "From end-to-end planning to real-time support, we stay connected throughout your journey. Trusted by thousands of happy travelers.",
       features: ["24/7 Support", "Tamil Help"],
-      image: mountTitlis,
+      image: About4,
     },
   ];
 
