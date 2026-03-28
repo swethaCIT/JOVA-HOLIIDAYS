@@ -2,12 +2,36 @@ import { useState, useRef, useEffect } from "react";
 import "./Testimonials.css";
 
 const reviews = [
-  { name: "Elavarasan", text: "I booked a surprise birthday trip and everything was handled perfectly. The experience was smooth, memorable, and beautifully planned from start to finish.", rating: 5 },
-  { name: "Becky", text: "Excellent planning and communication. Everything from hotel to transport was seamless and stress-free.", rating: 5 },
-  { name: "Dharoon", text: "Very professional and helpful team. They guided us properly and ensured everything went smoothly.", rating: 4.5 },
-  { name: "Balamurugan", text: "Our Goa trip was well organized and memorable. Great support throughout the journey.", rating: 5 },
-  { name: "Ajisha", text: "Fantastic service and very friendly team. Made the whole trip stress-free.", rating: 4.5 },
-  { name: "Vignesh", text: "Kashmir trip was arranged wonderfully. Great value and excellent service.", rating: 5 },
+  {
+    name: "Elavarasan",
+    text: "I booked a surprise birthday trip and everything was handled perfectly. The entire experience was smooth, memorable, and beautifully organized from start to finish.",
+    rating: 5,
+  },
+  {
+    name: "Becky",
+    text: "The trip was planned with excellent coordination and attention to every detail. The entire experience was smooth, comfortable, and completely stress-free from start to finish.",
+    rating: 5,
+  },
+  {
+    name: "Dharoon",
+    text: "The team was very professional and guided us clearly at every stage of the journey. The entire experience was smooth, well-managed, and completely hassle-free from start to finish.",
+    rating: 5,
+  },
+  {
+    name: "Balamurugan",
+    text: "Our Goa trip was perfectly organized with great care given to every detail. The entire experience was smooth, enjoyable, and beautifully managed from start to finish.",
+    rating: 5,
+  },
+  {
+    name: "Ajisha",
+    text: "The team provided fantastic service and were very friendly throughout the trip. The entire experience was smooth, relaxing, and completely stress-free from start to finish.",
+    rating: 5,
+  },
+  {
+    name: "Vignesh",
+    text: "Our Kashmir trip was arranged exceptionally well with excellent planning and support. The entire experience was smooth, memorable, and perfectly executed from start to finish.",
+    rating: 5,
+  },
 ];
 
 export default function Testimonials() {
