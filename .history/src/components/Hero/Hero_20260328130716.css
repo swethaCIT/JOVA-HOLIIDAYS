@@ -20,7 +20,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;               /* clip bg layers to the section  */
+  overflow: hidden;
 
   display: flex;
   align-items: center;
@@ -33,31 +33,26 @@
 /* ========================= */
 /* BACKGROUND LAYERS         */
 /* ========================= */
-
-/* Shared base for both layers */
 .hero__bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  will-change: opacity;           /* promote to its own compositor layer */
+  will-change: opacity;
 }
 
-/* Current image — always fully opaque, sits at the bottom */
 .hero__bg--current {
   z-index: 0;
   opacity: 1;
 }
 
-/* Next image — transparent by default, slides in above current */
 .hero__bg--next {
   z-index: 1;
   opacity: 0;
-  transition: opacity 1000ms ease-in-out; /* FADE_DURATION — keep in sync with JS */
+  transition: opacity 1000ms ease-in-out;
 }
 
-/* When isFading === true, fade the next layer fully into view */
 .hero__bg--next.hero__bg--visible {
   opacity: 1;
 }
@@ -68,7 +63,7 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;                     /* above bg layers, below content */
+  z-index: 2;
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.45),
@@ -82,7 +77,7 @@
 /* ========================= */
 .hero-content {
   position: relative;
-  z-index: 3;                     /* always above everything — never flickers */
+  z-index: 3;
   max-width: 900px;
   color: var(--white);
 }
@@ -148,7 +143,6 @@
   flex-wrap: wrap;
 }
 
-/* Base Button */
 .btn {
   padding: 14px 28px;
   border-radius: 40px;
@@ -158,7 +152,6 @@
   transition: 0.3s ease;
 }
 
-/* Primary */
 .btn.primary {
   background: #ff9800;
   color: white;
@@ -170,7 +163,6 @@
   transform: translateY(-2px);
 }
 
-/* Secondary (Glass) */
 .btn.secondary {
   background: var(--glass);
   color: white;
@@ -182,54 +174,9 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Hide carousel dots */
-.slick-dots,
-.swiper-pagination,
-[class*="dot"],
-[class*="indicator"] {
-  display: none !important;
-}
-
-/* ========================= */
-/* SCROLL INDICATOR */
-/* ========================= */
-.scroll-indicator {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.mouse {
-  width: 26px;
-  height: 42px;
-  border: 2px solid white;
-  border-radius: 20px;
-  position: relative;
-}
-
-.mouse::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: scroll 1.5s infinite;
-}
-
-@keyframes scroll {
-  0%   { opacity: 1; top: 8px; }
-  100% { opacity: 0; top: 20px; }
-}
-
 /* ========================= */
 /* RESPONSIVE */
 /* ========================= */
-
-/* Tablet */
 @media (max-width: 1024px) {
   .hero h1 {
     font-size: 44px;
@@ -240,7 +187,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .hero {
     padding: 0 16px;
@@ -265,7 +211,6 @@
   }
 }
 
-/* Small Mobile */
 @media (max-width: 480px) {
   .hero h1 {
     font-size: 26px;

@@ -182,48 +182,10 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Hide carousel dots */
-.slick-dots,
-.swiper-pagination,
-[class*="dot"],
-[class*="indicator"] {
-  display: none !important;
-}
-
 /* ========================= */
 /* SCROLL INDICATOR */
 /* ========================= */
-.scroll-indicator {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-}
 
-.mouse {
-  width: 26px;
-  height: 42px;
-  border: 2px solid white;
-  border-radius: 20px;
-  position: relative;
-}
-
-.mouse::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: scroll 1.5s infinite;
-}
-
-@keyframes scroll {
-  0%   { opacity: 1; top: 8px; }
-  100% { opacity: 0; top: 20px; }
-}
 
 /* ========================= */
 /* RESPONSIVE */
