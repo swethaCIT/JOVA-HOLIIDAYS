@@ -349,7 +349,6 @@
 
   .about-outer {
     padding: 20px;
-    padding-bottom: 40px;
     gap: 25px;
   }
 
@@ -424,7 +423,7 @@
   /* ✅ DOTS CENTER */
   .dots {
     justify-content: center;
-    bottom: 15px;
+    bottom: -15px; /* Pull it slightly below or adjust to bottom */
   }
 
   /* ❌ REMOVE arrows completely */
@@ -439,7 +438,7 @@
 }
 @media (max-width: 480px) {
   .about { padding: 40px 10px; }
-  .about-outer { padding: 15px; padding-bottom: 35px; gap: 20px; min-width: 0; }
+  .about-outer { padding: 15px; gap: 20px; min-width: 0; }
   .about-left, .about-right { min-width: 0; }
   .stats-card { width: 95%; padding: 10px 5px; gap: 5px; }
   .stats-card h3 { font-size: 13px; }
@@ -451,7 +450,7 @@
 
 @media (max-width: 480px) {
   .about { padding: 40px 10px; }
-  .about-outer { padding: 15px; padding-bottom: 35px; gap: 20px; min-width: 0; }
+  .about-outer { padding: 15px; gap: 20px; min-width: 0; }
   .about-left img { height: auto; max-width: 100%; border-radius: 12px; }
   .stats-card { width: 95%; left: 50%; transform: translateX(-50%); padding: 10px 5px; gap: 5px; justify-content: space-evenly; }
   .stats-card h3 { font-size: 13px; }

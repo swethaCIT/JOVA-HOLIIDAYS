@@ -183,20 +183,12 @@ export default function Testimonials() {
 
           {/* ✅ DOTS EVERYWHERE */}
           <div className="dots">
-            {isMobile
-              ? reviews.map((_, i) => (
-                  <span
-                    key={i}
-                    className={`dot ${i === activeIndex ? "active" : ""}`}
-                  />
-                ))
-              : [0, 1].map((_, i) => (
-                  <span
-                    key={i}
-                    className={`dot ${i === slide ? "active" : ""}`}
-                    onClick={() => setSlide(i)}
-                  />
-                ))}
+            {reviews.map((_, i) => (
+              <span
+                key={i}
+                className={`dot ${i === activeIndex ? "active" : ""}`}
+              />
+            ))}
           </div>
 
         </div>

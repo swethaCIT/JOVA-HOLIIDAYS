@@ -255,7 +255,7 @@
   }
 }
 
-/* 🔥 Hide dots in desktop since it's a static grid, not a carousel */
+/* hide dots in desktop */
 @media (min-width: 769px) {
   .dots {
     display: none;

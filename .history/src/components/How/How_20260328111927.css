@@ -166,7 +166,8 @@
     display: flex;
     overflow-x: auto;
     gap: 16px;
-    padding: 10px 5px 20px;
+    /* Centers the 82% wide card perfectly on load */
+    padding: 10px calc(50% - 41%) 20px;
 
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -255,7 +256,7 @@
   }
 }
 
-/* 🔥 Hide dots in desktop since it's a static grid, not a carousel */
+/* hide dots in desktop */
 @media (min-width: 769px) {
   .dots {
     display: none;
