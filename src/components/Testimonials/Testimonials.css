@@ -189,8 +189,7 @@
   }
 
   /* 🔥 CENTER HIGHLIGHT */
-  .card:nth-child(2),
-  .card:nth-child(3) {
+  .card.active-card {
     transform: scale(1);
     opacity: 1;
   }

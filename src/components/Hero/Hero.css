@@ -182,11 +182,9 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Hide carousel dots */
+/* Hide external carousel library dots only */
 .slick-dots,
-.swiper-pagination,
-[class*="dot"],
-[class*="indicator"] {
+.swiper-pagination {
   display: none !important;
 }
 
