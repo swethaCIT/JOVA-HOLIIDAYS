@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./CTA.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone, faEnvelope, faLocationPin } from "@fortawesome/free-solid-svg-icons";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -62,19 +64,25 @@ Message: ${form.message}`;
       <div className="contact-cards">
 
         <div className="card">
-          <div className="icon green">📞</div>
+        <div className="icon green">
+        <FontAwesomeIcon icon={faPhone} />
+        </div>
           <h4>Call Us</h4>
           <p>+91 9363311085</p>
         </div>
 
         <div className="card">
-          <div className="icon blue">✉️</div>
+          <div className="icon blue">
+    <FontAwesomeIcon icon={faEnvelope} />
+  </div>
           <h4>Email Us</h4>
           <p>travel@jovaholidays.com</p>
         </div>
 
         <div className="card">
-          <div className="icon orange">📍</div>
+        <div className="icon orange">
+    <FontAwesomeIcon icon={faLocationPin} />
+  </div>
           <h4>Visit Us</h4>
           <p>Chennai, India</p>
         </div>

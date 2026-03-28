@@ -80,7 +80,7 @@
   color: #777;
 }
 
-/* ICON */
+/* ICON container */
 .icon {
   width: 44px;
   height: 44px;
@@ -89,13 +89,21 @@
   align-items: center;
   justify-content: center;
   margin: auto;
-  color: white;
+  background: #ffffff;
   font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.icon.green { background: #22d664; }
-.icon.blue { background: #17538b; }
-.icon.orange { background: #ff9800; }
+/* 🔥 THIS IS IMPORTANT */
+.icon svg {
+  color: inherit;   /* take parent color */
+  fill: currentColor;
+}
+
+/* Variants */
+.icon.green { background: #e6f4f8; color: #074877; }
+.icon.blue { background: #eaf1ff; color: #0A3D62; }
+.icon.orange { background: #fff4e6; color: #0A3D62; }
 
 /* FORM WRAPPER */
 .form-wrapper {
