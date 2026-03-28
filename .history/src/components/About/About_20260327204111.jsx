@@ -48,36 +48,6 @@ export default function About() {
     setActive((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  // 🔥 ADDED: Touch / Swipe State
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
-
-  // Minimum distance to trigger swipe
-  const minSwipeDistance = 50;
-
-  const onTouchStart = (e) => {
-    setTouchEnd(null); // Reset touch end to prevent false triggers
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-
-    if (isLeftSwipe) {
-      next();
-    } else if (isRightSwipe) {
-      prev();
-    }
-  };
-
   return (
     <section className="about">
       <div className="about-outer glass-card">
@@ -110,38 +80,31 @@ export default function About() {
         <div className="about-right">
 
           <div className="carousel">
-            <div 
-              className="carousel-viewport"
-              onTouchStart={onTouchStart}
-              onTouchMove={onTouchMove}
-              onTouchEnd={onTouchEnd}
+            <div
+              className="carousel-track"
+              style={{ transform: `translateX(-${active * 100}%)` }}
             >
-              <div
-                className="carousel-track"
-                style={{ transform: `translateX(-${active * 100}%)` }}
-              >
-                {slides.map((slide, i) => (
-                  <div className="carousel-slide" key={i}>
+              {slides.map((slide, i) => (
+                <div className="carousel-slide" key={i}>
 
-                    {/* 🔥 INTRO */}
-                    <h2>{slide.introTitle}</h2>
-                    <p className="about-intro">{slide.introText}</p>
+                  {/* 🔥 INTRO */}
+                  <h2>{slide.introTitle}</h2>
+                  <p className="about-intro">{slide.introText}</p>
 
-                    {/* 🔥 CARD */}
-                    <div className="carousel-card">
-                      <h3>{slide.cardTitle}</h3>
-                      <p>{slide.cardText}</p>
+                  {/* 🔥 CARD */}
+                  <div className="carousel-card">
+                    <h3>{slide.cardTitle}</h3>
+                    <p>{slide.cardText}</p>
 
-                      <div className="feature-circles">
-                        {slide.features.map((f, idx) => (
-                          <span key={idx} className="circle">{f}</span>
-                        ))}
-                      </div>
+                    <div className="feature-circles">
+                      {slide.features.map((f, idx) => (
+                        <span key={idx} className="circle">{f}</span>
+                      ))}
                     </div>
-
                   </div>
-                ))}
-              </div>
+
+                </div>
+              ))}
             </div>
 
             {/* DOTS */}

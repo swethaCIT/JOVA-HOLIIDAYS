@@ -110,12 +110,7 @@ export default function About() {
         <div className="about-right">
 
           <div className="carousel">
-            <div 
-              className="carousel-viewport"
-              onTouchStart={onTouchStart}
-              onTouchMove={onTouchMove}
-              onTouchEnd={onTouchEnd}
-            >
+            <div className="carousel-viewport">
               <div
                 className="carousel-track"
                 style={{ transform: `translateX(-${active * 100}%)` }}

@@ -24,7 +24,6 @@
   inset: 0;
   background: rgba(0,0,0,0.15);
   pointer-events: none;
-  z-index: 0;
 }
 
 @keyframes gradientMove {
@@ -38,7 +37,6 @@
 /* ========================= */
 .about-outer {
   position: relative;
-  z-index: 1;
 
   max-width: 1200px;
   margin: auto;
@@ -115,8 +113,6 @@
   flex-direction: column;
   justify-content: center;
   gap: 18px;
-  min-width: 0;
-  min-height: 0;
 }
 
 .about-right h2 {
@@ -136,17 +132,8 @@
 /* CAROUSEL */
 /* ========================= */
 .carousel {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 5;
-}
-
-.carousel-viewport {
   overflow: hidden;
   touch-action: pan-y;
-  width: 100%;
 }
 
 .carousel-track {
@@ -258,32 +245,28 @@
   display: flex;
   gap: 8px;
   justify-content: center;
-  align-items: center;
   position: relative;
-  z-index: 20;
-  width: 100%;
+  z-index: 10;
 }
 
 .dot {
   display: inline-block;
   flex-shrink: 0;
-  width: 12px;
-  height: 12px;
-  min-width: 12px;
-  min-height: 12px;
-  background: #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
+  background: rgba(13, 59, 102, 0.3); /* Transparent dark blue for inactive */
   border-radius: 50%;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 .dot.active {
-  width: 28px;
-  min-width: 28px;
-  background: var(--orange);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-  border-radius: 12px;
+  width: 26px;
+  min-width: 26px;
+  background: var(--blue, #0d3b66); /* Solid dark blue for active */
+  border-radius: 10px;
 }
 
 /* 🔥 Mobile tap feedback */
