@@ -48,7 +48,9 @@ export default function Services() {
             </p>
           </div>
 
+          {/* ✅ MOST POPULAR */}
           <div className="service-card">
+          <span className="badge">Most Popular</span>
             <div className="icon">🏨</div>
             <h3>Hotel Booking</h3>
             <p>
