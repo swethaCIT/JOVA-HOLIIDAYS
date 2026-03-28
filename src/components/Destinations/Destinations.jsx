@@ -27,6 +27,7 @@ const internationalData = [
   { name: "Japan", duration: "6N/7D", tagline: "Modern & Tradition", ideal: "Culture Lovers", image: "Japan.png" },
   { name: "Kenya", duration: "6N/7D", tagline: "Wildlife Safari", ideal: "Adventure", image: "Kenya.png" },
   { name: "Georgia", duration: "5N/6D", tagline: "Hidden Europe", ideal: "Nature Lovers", image: "Georgia.jpg" },
+  { name: "Bhutan", duration: " 5N/6D", tagline: "East Meets West", ideal: "Culture,  Nature, Hills", image: "Bhutan.png" },
 ];
 
 export default function Destinations() {
