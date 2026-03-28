@@ -358,7 +358,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
   }
 
   /* 🔥 IMAGE FIX */
@@ -396,11 +395,6 @@
   }
 
   /* 🔥 RIGHT SIDE */
-
-  .about-right {
-  padding: 0 10px;
-}
-
   .about-right h2 {
     font-size: 24px;
   }
@@ -418,11 +412,9 @@
   }
 
   .feature-circles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: flex-start;
-}
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
   .circle {
     font-size: 11px;

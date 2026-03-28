@@ -255,9 +255,28 @@
   }
 }
 
-/* 🔥 Hide dots in desktop since it's a static grid, not a carousel */
+/* 🔥 Show dots everywhere */
 @media (min-width: 769px) {
   .dots {
-    display: none;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    width: 20px;
+    border-radius: 10px;
+    background: var(--orange);
   }
 }
