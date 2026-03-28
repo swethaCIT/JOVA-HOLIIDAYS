@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./About.css";
 import About2 from "../../assets/images/About2.png";
-import About3 from "../../assets/images/About3.png";
+import About5 from "../../assets/images/About5.png";
 import About4 from "../../assets/images/About4.png";
 
 
@@ -32,7 +32,7 @@ export default function About() {
       cardTitle: "Plan Around Your Budget",
       cardText: "Your budget is our starting point. We design trips that give you the best value without compromising on comfort or experience.",
       features: ["Savings", "Best Value"],
-      image: About3,
+      image: About5,
     },
     {
       introTitle: "Reliable Support In Every Step",
