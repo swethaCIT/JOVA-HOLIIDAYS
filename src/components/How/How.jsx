@@ -1,31 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import "./How.css";
 
 export default function How() {
   const scrollRef = useRef(null);
-  const [active, setActive] = useState(0);
 
   useEffect(() => {
     const cards = document.querySelectorAll(".how-card");
-
     cards.forEach((card, i) => {
       setTimeout(() => {
         card.classList.add("show");
       }, i * 150);
     });
   }, []);
-
-  // 🔥 Track scroll for dots
-  const handleScroll = () => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    const scrollLeft = container.scrollLeft;
-    const cardWidth = container.offsetWidth * 0.8;
-
-    const index = Math.round(scrollLeft / cardWidth);
-    setActive(index);
-  };
 
   return (
     <section className="how">
@@ -36,12 +22,7 @@ export default function How() {
           <p>Planning your perfect trip is as easy as 1-2-3-4-5! Follow these simple steps</p>
         </div>
 
-        {/* GRID / CAROUSEL */}
-        <div
-          className="how-grid"
-          ref={scrollRef}
-          onScroll={handleScroll}
-        >
+        <div className="how-grid" ref={scrollRef}>
 
           <div className="how-card">
             <span className="step">01</span>
@@ -78,13 +59,6 @@ export default function How() {
             <p>Return with unforgettable moments.</p>
           </div>
 
-        </div>
-
-        {/* 🔥 DOT INDICATOR */}
-        <div className="dots">
-          {[0,1,2,3,4].map((i) => (
-            <span key={i} className={active === i ? "dot active" : "dot"} />
-          ))}
         </div>
 
         <div className="how-footer">

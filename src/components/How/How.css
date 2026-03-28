@@ -111,7 +111,7 @@
 
 /* TEXT */
 .how-card h3 {
-  color:#01142e;
+  color: #01142e;
 }
 
 .how-card p {
@@ -189,14 +189,12 @@
 
     scroll-snap-align: center;
 
-    /* KEEP GLASS */
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
     border: 1px solid rgba(255,255,255,0.25);
 
-    /* smooth animation */
     transform: scale(0.96);
     opacity: 0.85;
 
@@ -230,34 +228,5 @@
 
   .how-footer p {
     font-size: 14px;
-  }
-
-  /* DOTS */
-  .dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  .dot {
-    width: 6px;
-    height: 6px;
-    background: rgba(255,255,255,0.6);
-    border-radius: 50%;
-    transition: all 0.3s ease;
-  }
-
-  .dot.active {
-    width: 18px;
-    border-radius: 10px;
-    background: var(--orange);
-  }
-}
-
-/* 🔥 Hide dots in desktop since it's a static grid, not a carousel */
-@media (min-width: 769px) {
-  .dots {
-    display: none;
   }
 }
