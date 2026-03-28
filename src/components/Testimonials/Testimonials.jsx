@@ -19,7 +19,7 @@ const reviews = [
   },
   {
     name: "Balamurugan",
-    text: "Our Goa trip was perfectly organized with great care given to every detail. The entire experience was smooth, enjoyable, and beautifully managed  throughout the entire tri.",
+    text: "Our Goa trip was perfectly organized with great care given to every detail. The entire experience was smooth, enjoyable, and beautifully managed  throughout the entire trip.",
     rating: 5,
   },
   {
