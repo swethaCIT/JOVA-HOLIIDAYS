@@ -71,7 +71,7 @@ export default function About() {
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
@@ -115,7 +115,7 @@ export default function About() {
         <div className="about-right">
 
           <div className="carousel">
-            <div 
+            <div
               className="carousel-viewport"
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
